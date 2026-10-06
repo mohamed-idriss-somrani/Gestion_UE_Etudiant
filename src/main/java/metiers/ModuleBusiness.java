@@ -17,7 +17,6 @@ private UniteEnseignementBusiness uniteEnseignementBusiness=new UniteEnseignemen
       modules.add(new Module("M201", "Communication", 1, 15, Module.TypeModule.TRANSVERSAL,uniteEnseignementBusiness.getUEByCode(2)));
     }
 
-    // Ajouter un module
     public boolean addModule(Module module) {
 
         int code=module.getUniteEnseignement().getCode();
@@ -28,8 +27,6 @@ private UniteEnseignementBusiness uniteEnseignementBusiness=new UniteEnseignemen
     }
         return false;
 }
-
-    // Récupérer un module par son matricule
     public Module getModuleByMatricule(String matricule) {
         for (Module m : modules) {
             if (m.getMatricule().equals(matricule)) {
@@ -38,8 +35,6 @@ private UniteEnseignementBusiness uniteEnseignementBusiness=new UniteEnseignemen
         }
         return null;
     }
-
-    // Récupérer les modules par type
     public List<Module> getModulesByType(Module.TypeModule type) {
         List<Module> result = new ArrayList<>();
         for (Module m : modules) {
@@ -49,8 +44,6 @@ private UniteEnseignementBusiness uniteEnseignementBusiness=new UniteEnseignemen
         }
         return result;
     }
-
-    // Mettre à jour un module
     public boolean updateModule(String matricule, Module updatedModule) {
         for (int i = 0; i < modules.size(); i++) {
             if (modules.get(i).getMatricule().equals(matricule)) {
@@ -60,8 +53,6 @@ private UniteEnseignementBusiness uniteEnseignementBusiness=new UniteEnseignemen
         }
         return false;
     }
-
-    // Supprimer un module
     public boolean deleteModule(String matricule) {
         Iterator<Module> iterator = modules.iterator();
         while (iterator.hasNext()) {
@@ -90,4 +81,6 @@ private UniteEnseignementBusiness uniteEnseignementBusiness=new UniteEnseignemen
         }
         return result;
     }
-}
+    public UniteEnseignementBusiness getUniteEnseignementBusiness() {
+        return uniteEnseignementBusiness;
+    }}
